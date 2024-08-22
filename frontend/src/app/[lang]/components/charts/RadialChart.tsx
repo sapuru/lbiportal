@@ -60,7 +60,6 @@ export function RadialChart(){
       <RadialBar
         label={{ position: 'insideStart', fill: '#fff' }}
         background
-        clockWise
         dataKey="uv"
       />
       <Legend iconSize={10} layout="vertical" verticalAlign="middle" wrapperStyle={style} />
