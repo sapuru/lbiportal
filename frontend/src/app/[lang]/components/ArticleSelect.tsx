@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { RadialChart } from "./charts/RadialChart";
 
 interface Category {
   id: number;
@@ -84,6 +85,10 @@ export default function ArticleSelect({
             })}
           </ul>
         </div>
+
+        <div className="w-full h-96 hover:no-underline items-center md:flex-row md:items-center focus:no-underline dark:bg-gray-900 xl:min-w-[600px] rounded-2xl overflow-hidden shadow-lg">
+        <RadialChart></RadialChart>
+        </div>  
       </div>
     </div>
   );

@@ -6,6 +6,9 @@ import Loader from "../components/Loader";
 import Blog from "../views/blog-list";
 import PageHeader from "../components/PageHeader";
 
+import { AreaStackedChart } from "../components/charts/AreaStackedChart";
+
+
 interface Meta {
   pagination: {
     start: number;
@@ -69,6 +72,7 @@ export default function Profile() {
   return (
     <div>
       <PageHeader heading="Medios Físicos" text="" />
+
       <Blog data={data}>
         {meta!.pagination.start + meta!.pagination.limit <
           meta!.pagination.total && (
@@ -83,6 +87,14 @@ export default function Profile() {
           </div>
         )}
       </Blog>
+      <div className="flex justify-center">
+
+      <h3>Ejemplo de grafico:</h3></div>
+
+      <div className="w-full h-96 max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-900 lg:w-[1200px] xl:min-w-[900px] rounded-2xl overflow-hidden shadow-lg">
+      <AreaStackedChart></AreaStackedChart>
+      </div>
+
     </div>
   );
 }
