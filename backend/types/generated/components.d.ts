@@ -1,5 +1,64 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface LinksSocialLink extends Schema.Component {
+  collectionName: 'components_links_social_links';
+  info: {
+    displayName: 'Social Link';
+    description: '';
+  };
+  attributes: {
+    url: Attribute.String & Attribute.Required;
+    newTab: Attribute.Boolean & Attribute.DefaultTo<false>;
+    text: Attribute.String & Attribute.Required;
+    social: Attribute.Enumeration<['YOUTUBE', 'TWITTER', 'DISCORD', 'WEBSITE']>;
+  };
+}
+
+export interface LinksLink extends Schema.Component {
+  collectionName: 'components_links_links';
+  info: {
+    name: 'Link';
+    displayName: 'Link';
+    icon: 'link';
+    description: '';
+  };
+  attributes: {
+    url: Attribute.String & Attribute.Required;
+    newTab: Attribute.Boolean & Attribute.DefaultTo<false>;
+    text: Attribute.String & Attribute.Required;
+  };
+}
+
+export interface LinksButton extends Schema.Component {
+  collectionName: 'components_links_simple_buttons';
+  info: {
+    name: 'Button';
+    displayName: 'Button';
+    icon: 'fingerprint';
+    description: '';
+  };
+  attributes: {
+    text: Attribute.String;
+    type: Attribute.Enumeration<['primary', 'secondary']>;
+  };
+}
+
+export interface LinksButtonLink extends Schema.Component {
+  collectionName: 'components_links_buttons';
+  info: {
+    name: 'Button-link';
+    displayName: 'Button link';
+    icon: 'fingerprint';
+    description: '';
+  };
+  attributes: {
+    url: Attribute.String;
+    newTab: Attribute.Boolean & Attribute.DefaultTo<false>;
+    text: Attribute.String;
+    type: Attribute.Enumeration<['primary', 'secondary']>;
+  };
+}
+
 export interface SharedVideoEmbed extends Schema.Component {
   collectionName: 'components_sections_video_embeds';
   info: {
@@ -241,65 +300,6 @@ export interface MetaMetadata extends Schema.Component {
   };
 }
 
-export interface LinksSocialLink extends Schema.Component {
-  collectionName: 'components_links_social_links';
-  info: {
-    displayName: 'Social Link';
-    description: '';
-  };
-  attributes: {
-    url: Attribute.String & Attribute.Required;
-    newTab: Attribute.Boolean & Attribute.DefaultTo<false>;
-    text: Attribute.String & Attribute.Required;
-    social: Attribute.Enumeration<['YOUTUBE', 'TWITTER', 'DISCORD', 'WEBSITE']>;
-  };
-}
-
-export interface LinksLink extends Schema.Component {
-  collectionName: 'components_links_links';
-  info: {
-    name: 'Link';
-    displayName: 'Link';
-    icon: 'link';
-    description: '';
-  };
-  attributes: {
-    url: Attribute.String & Attribute.Required;
-    newTab: Attribute.Boolean & Attribute.DefaultTo<false>;
-    text: Attribute.String & Attribute.Required;
-  };
-}
-
-export interface LinksButton extends Schema.Component {
-  collectionName: 'components_links_simple_buttons';
-  info: {
-    name: 'Button';
-    displayName: 'Button';
-    icon: 'fingerprint';
-    description: '';
-  };
-  attributes: {
-    text: Attribute.String;
-    type: Attribute.Enumeration<['primary', 'secondary']>;
-  };
-}
-
-export interface LinksButtonLink extends Schema.Component {
-  collectionName: 'components_links_buttons';
-  info: {
-    name: 'Button-link';
-    displayName: 'Button link';
-    icon: 'fingerprint';
-    description: '';
-  };
-  attributes: {
-    url: Attribute.String;
-    newTab: Attribute.Boolean & Attribute.DefaultTo<false>;
-    text: Attribute.String;
-    type: Attribute.Enumeration<['primary', 'secondary']>;
-  };
-}
-
 export interface LayoutNavbar extends Schema.Component {
   collectionName: 'components_layout_navbars';
   info: {
@@ -479,6 +479,10 @@ export interface ElementsFeatureColumn extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'links.social-link': LinksSocialLink;
+      'links.link': LinksLink;
+      'links.button': LinksButton;
+      'links.button-link': LinksButtonLink;
       'shared.video-embed': SharedVideoEmbed;
       'shared.slider': SharedSlider;
       'shared.seo': SharedSeo;
@@ -497,10 +501,6 @@ declare module '@strapi/types' {
       'sections.feature-columns-group': SectionsFeatureColumnsGroup;
       'sections.bottom-actions': SectionsBottomActions;
       'meta.metadata': MetaMetadata;
-      'links.social-link': LinksSocialLink;
-      'links.link': LinksLink;
-      'links.button': LinksButton;
-      'links.button-link': LinksButtonLink;
       'layout.navbar': LayoutNavbar;
       'layout.logo': LayoutLogo;
       'layout.footer': LayoutFooter;

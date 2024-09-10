@@ -22,7 +22,7 @@ function Feature({ title, description, showLink, newTab, url, text }: Feature) {
   return (
     <div className="flex flex-col items-center p-4">
 
-      <h3 className="my-3 text-3xl font-semibold">{title}</h3>
+      <h3 className="my-3">{title}</h3>
       <div className="space-y-1 leading-tight my-6">
         <p>{description}</p>
       </div>
@@ -31,7 +31,7 @@ function Feature({ title, description, showLink, newTab, url, text }: Feature) {
           <Link
             href={url}
             target={newTab ? "_blank" : "_self"}
-            className="inline-block px-4 py-2 mt-4 text-sm font-semibold text-white transition duration-200 ease-in-out bg-blue-500 rounded-lg hover:bg-blue-800"
+            className="inline-block px-4 py-2 mt-4 gradient-button text-white transition duration-200 ease-in-out bg-blue-500 rounded-lg hover:bg-blue-800"
           >
             {text}
           </Link>

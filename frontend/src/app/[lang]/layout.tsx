@@ -15,13 +15,23 @@ import localFont from "next/font/local"
 const AASmart = localFont({
   src: [
     {
+      path: "../../../public/fonts/AASmartSans-Thin.woff2",
+      weight: '100',
+      style: 'normal',
+    },
+    {
       path: "../../../public/fonts/AASmartSans-Light.woff2",
+      weight: '300',
+      style: 'normal',
+    },
+    {
+      path: "../../../public/fonts/AASmartSans-Regular.woff2",
       weight: '400',
       style: 'normal',
     },
     {
       path: '../../../public/fonts/AASmartSans-LightItalic.woff2',
-      weight: '400',
+      weight: '300',
       style: 'italic',
     },
     {
@@ -33,6 +43,11 @@ const AASmart = localFont({
       path: '../../../public/fonts/AASmartSans-SemiBoldItalic.woff2',
       weight: '700',
       style: 'italic',
+    },
+    {
+      path: '../../../public/fonts/AASmartSans-Bold.woff2',
+      weight: '800',
+      style: 'normal',
     },
   ],
   variable:'--font-AASmart',
