@@ -11,7 +11,7 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'proper-excellence-4322d5b693.media.strapiapp.com',
+        hostname: 'pretty-ducks-77c6e9fe74.media.strapiapp.com',
       }
     ],
   },
