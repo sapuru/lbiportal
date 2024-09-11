@@ -53,6 +53,17 @@ export default function Hero({ data }: HeroProps) {
             className=""
           />
         </div>
+        <div className="flex items-center justify-center p-6 mt-8 lg:mt-full h-full sm:h-full lg:h-full xl:h-full 2xl:h-full">
+          <Image
+            src={imgUrl || ""}
+            alt={
+              data.picture.data.attributes.alternativeText || "none provided"
+            }
+            className="object-contain h-full sm:h-full lg:h-full xl:h-full 2xl:h-full "
+            width={600}
+            height={600}
+          />
+        </div>
 
       </div>
     </section>

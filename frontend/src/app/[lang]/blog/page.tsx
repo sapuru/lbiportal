@@ -71,7 +71,27 @@ export default function Profile() {
 
   return (
     <div>
-      <PageHeader heading="Medios Físicos" text="" />
+      <PageHeader heading="Medio Físico" text="" />
+
+    <section className="m:py-12 lg:py-24 mx-12">
+
+      <div className="container mx-auto grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-2">
+      <div className="max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-900 lg:w-[300px] xl:min-w-[375px]">
+      <h3>Nuestro Compromiso</h3> </div>
+      <div className="max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-900 lg:w-[400px] xl:min-w-[475px]">
+      <p>Texto de prueba. Agregar aquí suficiente texto como para justificar la sección. Lo ideal sería explicar a qué nos referimos cuando decimos "Medio Físico" y qué es lo que queremos lograr como impacto final.</p>
+      </div>
+
+      </div>
+
+      <div className="lg:py-24 m:py-12 flex justify-center">
+      <h4>Ejemplo de grafico:</h4></div>
+      <div className="w-full h-96 max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-900 lg:w-[1200px] xl:min-w-[900px] rounded-2xl overflow-hidden shadow-lg">
+      <AreaStackedChart></AreaStackedChart>
+      </div>
+
+      </section>
+
 
       <Blog data={data}>
         {meta!.pagination.start + meta!.pagination.limit <
@@ -87,13 +107,6 @@ export default function Profile() {
           </div>
         )}
       </Blog>
-      <div className="flex justify-center">
-
-      <h3>Ejemplo de grafico:</h3></div>
-
-      <div className="w-full h-96 max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-900 lg:w-[1200px] xl:min-w-[900px] rounded-2xl overflow-hidden shadow-lg">
-      <AreaStackedChart></AreaStackedChart>
-      </div>
 
     </div>
   );
