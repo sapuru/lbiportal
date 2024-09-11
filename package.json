@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "start": "node node_modules/@strapi/strapi/bin/strapi.js start",
     "frontend": "yarn dev --prefix ../frontend/",
     "backend": "yarn dev --prefix ../backend/",
     "clear": "cd frontend && rm -rf .next && rm -rf cache",
